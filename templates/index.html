@@ -3,3 +3,32 @@
 <p>This is my first page</p>
 
 <p>Isn't this cool ?</p>
+
+<p>My name is {{ first_name }}</p>
+
+<!-- FILTERS
+safe
+capitalize
+lower
+upper
+title
+trim
+striptags -->
+
+<p>{{ stuff|title }}</p>
+
+<h3>Favorite Pizza:</h3>
+{% for topping in favorite_pizza %}
+    {% if topping == 41 %}
+        {{ topping + 100 }}<br />
+
+    {% else %}
+        {{ topping }}<br />
+    {% endif  %}
+
+    <!-- {{ topping }}<br /> -->
+{% endfor %}
+
+<br /><br />
+
+<!-- {{ favorite_pizza.2 }} -->

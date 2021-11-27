@@ -1,3 +1,7 @@
+# WIN
+# export FLASK_ENV=development
+# export FLASK_APP=hello.py
+# MAC
 # $env:FLASK_ENV = "development"
 # $env:FLASK_APP = "hello"
 from flask import Flask, render_template
@@ -11,7 +15,14 @@ app = Flask(__name__)
 #     return "<h1>hello world</h1>"
 
 def index():
-    return render_template("index.html")
+    first_name = "Chris"
+    stuff = "this is some stuff"
+    favorite_pizza = ["peperoni", "mozza", "calzone", "caprizioza", 41]
+
+    return render_template("index.html", 
+        first_name = first_name,
+        favorite_pizza = favorite_pizza, 
+        stuff = stuff)
 
 @app.route('/user/<name>')
 
