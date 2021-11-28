@@ -1,34 +1,39 @@
-<h1>Hello World</h1>
+{% extends 'base.html' %}
+{% block content %}
 
-<p>This is my first page</p>
+    <h1>Hello World</h1>
 
-<p>Isn't this cool ?</p>
+    <p>This is my first page</p>
 
-<p>My name is {{ first_name }}</p>
+    <p>Isn't this cool ?</p>
 
-<!-- FILTERS
-safe
-capitalize
-lower
-upper
-title
-trim
-striptags -->
+    <p>My name is {{ first_name }}</p>
 
-<p>{{ stuff|title }}</p>
+    <!-- FILTERS
+    safe
+    capitalize
+    lower
+    upper
+    title
+    trim
+    striptags -->
 
-<h3>Favorite Pizza:</h3>
-{% for topping in favorite_pizza %}
-    {% if topping == 41 %}
-        {{ topping + 100 }}<br />
+    <p>{{ stuff|title }}</p>
 
-    {% else %}
-        {{ topping }}<br />
-    {% endif  %}
+    <h3>Favorite Pizza:</h3>
+    {% for topping in favorite_pizza %}
+        {% if topping == 41 %}
+            {{ topping + 100 }}<br />
 
-    <!-- {{ topping }}<br /> -->
-{% endfor %}
+        {% else %}
+            {{ topping }}<br />
+        {% endif  %}
 
-<br /><br />
+        <!-- {{ topping }}<br /> -->
+    {% endfor %}
 
-<!-- {{ favorite_pizza.2 }} -->
+    <br /><br />
+
+    <!-- {{ favorite_pizza.2 }} -->
+
+{% endblock %}
